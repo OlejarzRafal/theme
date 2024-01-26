@@ -1,0 +1,33 @@
+.law-text {
+	&__container {
+		display: flex;
+		flex-direction: column;
+		row-gap: 16px;
+	}
+	&__header-top {
+		max-width: 50%;
+	}
+	&__header {
+		@include subtitle;
+		margin: 0;
+	}
+	&__subheader {
+		@include text;
+		font-weight: 600;
+	}
+	&__descWrap {
+		display: flex;
+		column-gap: 50px;
+		justify-content: space-between;
+	}
+	@media (max-width: 1199px) {
+		margin-top: 60px;
+		&__header-top {
+			max-width: 100%;
+		}
+		&__descWrap {
+			flex-direction: column;
+			row-gap: 16px;
+		}
+	}
+}
