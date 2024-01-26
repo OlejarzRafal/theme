@@ -1,0 +1,237 @@
+.c-blog {
+    margin: 120px 0 118px;
+    @media (max-width: 767px) {
+        margin: 120px 0 40px;
+    }
+    &-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #d8d8d8;
+        margin-bottom: 32px;
+        &__title {
+            font-size: 32px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin: 0 0 8px;
+        }
+        &__text {
+            color: #484c58;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.3;
+            margin: 0;
+        }
+        &__link {
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            transition: opacity 0.3s ease-in-out;
+            &:hover {
+                opacity: 0.7;
+                svg {
+                    transform: translateX(4px);
+                }
+            }
+            svg {
+                margin-left: 8px;
+                transition: transform 0.3s ease-in-out;
+            }
+        }
+    }
+    &-more {
+        display: none;
+    }
+    .blog-item {
+        &__image {
+            height: 383px;
+            width: 100%;
+            border-radius: 32px;
+            background: #f1e9e3;
+            overflow: hidden;
+            margin-bottom: 20px;
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &__content {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            color: #484c58;
+            font-size: 14px;
+            font-weight: 500;
+            svg {
+                margin: 0 7px;
+            }
+        }
+        &__title {
+            color: #1c203f;
+            font-size: 20px;
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+        &:hover {
+            .blog-item__title {
+                opacity: 0.7;
+            }
+        }
+    }
+    &-list {
+        overflow: hidden;
+    }
+    &__pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        top: 20px;
+    }
+    &__scrollbar {
+        display: none;
+    }
+    &__footer {
+        position: relative;
+        margin-top: 55px;
+        display: flex;
+        .swiper-pagination {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .swiper-pagination-bullet {
+            border-radius: 95px;
+            opacity: 0.32;
+            background: #1c203f;
+            width: 16px;
+            display: block;
+            height: 12px;
+            transition: color 0.3s ease-in-out, width 0.3s ease-in-out,
+                opacity 0.3s ease-in-out;
+            &:not(:last-child) {
+                margin-right: 12px;
+            }
+            &.swiper-pagination-bullet-active {
+                opacity: 1;
+                border-radius: 95px;
+                background: #1c203f;
+                width: 40px;
+            }
+        }
+    }
+    &__controls {
+        // position: absolute;
+        // top: 50%;
+        // left: 0;
+        // transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+        .swiper-button-prev {
+            border-radius: 60px;
+            border: 2px solid #a7a7a7;
+            padding: 8px 21px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin-right: 13px;
+            transition: opacity 0.3s ease-in-out;
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+        .swiper-button-next {
+            border-radius: 60px;
+            border: 2px solid #1c203f;
+            padding: 8px 21px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background: #1c203f;
+            transition: opacity 0.3s ease-in-out;
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+    @media screen and (max-width: 1400px) {
+        .blog-item {
+            &__image {
+                height: 300px;
+            }
+        }
+    }
+    @media screen and (max-width: $xl) {
+        &-list {
+            margin-right: -15px;
+            padding-bottom: 0;
+        }
+        &__footer {
+            margin-top: 32px;
+            margin-bottom: 32px;
+            .swiper-scrollbar {
+                display: block;
+                width: 100%;
+                height: 12px;
+                .swiper-scrollbar-drag {
+                    border-radius: 95px;
+                    background: #1c203f;
+                    height: 100%;
+                }
+            }
+        }
+        &__scrollbar {
+            display: block;
+            border-radius: 95px;
+            background: rgba(228, 203, 184, 0.32);
+            padding: 2px;
+            margin-right: 15px;
+            width: 100%;
+        }
+        &__controls,
+        &__pagination {
+            display: none;
+        }
+        .blog-item {
+            &__image {
+                height: 281px;
+                margin-bottom: 16px;
+            }
+            &__title {
+                font-size: 18px;
+            }
+        }
+    }
+    @media screen and (max-width: $md) {
+        &-top {
+            border: unset;
+            margin-bottom: 24px;
+            &__title {
+                margin-bottom: 0;
+                font-size: 24px;
+            }
+            &__text,
+            &__link {
+                display: none;
+            }
+        }
+        &-more {
+            display: block;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e4cbb8;
+            justify-content: center;
+            margin-right: 15px;
+            .c-blog-top__link {
+                display: flex;
+                justify-content: center;
+                padding: 12px 24px;
+                width: 100%;
+            }
+        }
+    }
+}

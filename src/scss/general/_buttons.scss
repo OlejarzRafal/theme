@@ -1,0 +1,18 @@
+.button-link {
+    padding: 12px 24px;
+    display: flex;
+    color: #1c203f;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    column-gap: 8px;
+    align-items: center;
+    transition: all 0.2s;
+    &:hover {
+        opacity: 0.8;
+        svg {
+            transform: translateX(4px);
+        }
+    }
+}

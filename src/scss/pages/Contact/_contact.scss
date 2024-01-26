@@ -1,0 +1,133 @@
+[data-id='contact-contact'] {
+  padding-bottom: 128px;
+  @media screen and (max-width: $xl) {
+    margin-top: 48px;
+  }
+  @media screen and (max-width: $lg) {
+    padding-bottom: 48px;
+  }
+  .contact {
+    &__title {
+      @include subtitle;
+    }
+    &__main {
+      display: flex;
+    }
+    &__left {
+      border-radius: 32px;
+      border: 1px solid #e4cbb8;
+      background: #f1e9e3;
+      padding: 56px 37px 94px 56px;
+      max-width: 588px;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+    &-title {
+      color: #141b47;
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 0 45px;
+    }
+    &-item {
+      &__title {
+        color: #141b47;
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0 0 12px;
+        &.phone,
+        &.email {
+          transition: opacity 0.2s ease-in-out;
+          display: block;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+        &.email {
+          margin-top: 45px;
+        }
+      }
+      &__text {
+        color: #6b7197;
+        font-size: 14px;
+        font-weight: 500;
+        margin: -4px 0 45px;
+      }
+    }
+    &__right {
+      width: 100%;
+      margin-left: -70px;
+    }
+    &__map {
+      width: 100%;
+      height: 100%;
+      border-radius: 0 32px 32px 0;
+      border: 1px solid #e4cbb8;
+      overflow: hidden;
+      padding-left: 30px;
+      p {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    @media screen and (max-width: 1400px) {
+      &__left {
+        padding: 36px;
+        max-width: 440px;
+      }
+    }
+    @media screen and (max-width: $xl) {
+      margin-top: 48px;
+    }
+    @media screen and (max-width: 800px) {
+      &__container {
+        padding: 0;
+      }
+      &__main {
+        flex-direction: column;
+      }
+      &__title {
+        padding: 0 15px;
+      }
+      &__left {
+        width: 100%;
+        padding: 0 15px;
+        background: unset;
+        border: none;
+        max-width: unset;
+      }
+      &__right {
+        margin-left: 0;
+        margin-top: 40px;
+      }
+      &-title {
+        margin-bottom: 24px;
+        font-size: 18px;
+      }
+      &-item {
+        &__title {
+          &.email {
+            margin-top: 24px;
+          }
+        }
+        &__text {
+          margin: -4px 0 24px;
+        }
+      }
+      &__right {
+        margin-top: 8px;
+      }
+      &__map {
+        padding-left: 0;
+        border-radius: unset;
+        height: 576px;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+[data-opacity-move] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 1.2s cubic-bezier(0.17, 0.16, 0.09, 0.93),
+    opacity 1.2s cubic-bezier(0.17, 0.16, 0.09, 0.93);
+  &.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+[data-opacity] {
+  opacity: 0;
+  transition: all 0.8s ease-in-out;
+  &.animate {
+    opacity: 1;
+  }
+}
