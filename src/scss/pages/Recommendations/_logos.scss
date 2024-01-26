@@ -1,0 +1,50 @@
+[data-id='recommendation-logos'] {
+  margin-bottom: 80px;
+  overflow: hidden;
+  .recommendation-logos {
+    &__title {
+      @include subtitle;
+      margin-bottom: 24px;
+    }
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -70px;
+      margin-right: -70px;
+    }
+    &__item {
+      margin: 0 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      img {
+        max-height: 74px;
+        max-width: 240px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+      }
+    }
+  }
+  @media screen and (max-width: $xl) {
+    margin-top: 72px;
+    .recommendation-logos {
+      &__title {
+        margin-bottom: 32px;
+      }
+      &__list {
+        margin-left: -40px;
+        margin-right: -40px;
+        justify-content: center;
+      }
+      &__item {
+        margin: 0 40px 12px;
+        img {
+          max-height: 64px;
+          max-width: 160px;
+        }
+      }
+    }
+  }
+}

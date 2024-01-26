@@ -1,0 +1,99 @@
+[data-id="home-hero"] {
+    .home-hero {
+        &__container {
+            display: flex;
+            margin-top: 95px;
+        }
+        &__left {
+            max-width: 741px;
+            margin-right: 32px;
+            h1 {
+                color: #1c203f;
+                font-size: 56px;
+                font-weight: 600;
+                letter-spacing: 1.68px;
+                margin: 0 0 24px;
+            }
+            p {
+                @include text;
+                margin: 0 0 32px;
+            }
+        }
+        &__link {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            border-radius: 512px;
+            background: #1c203f;
+            color: #f4e7e7;
+            font-size: 16px;
+            font-weight: 600;
+            transition: opacity 0.3s ease-in-out;
+            &:hover {
+                opacity: 0.7;
+            }
+            svg {
+                margin-left: 8px;
+            }
+        }
+        &__right {
+            margin-top: -145px;
+            pointer-events: none;
+        }
+
+        @media screen and (max-width: 1400px) {
+            &__left {
+                max-width: 600px;
+            }
+        }
+        @media screen and (max-width: $xl) {
+            &__left {
+                h1 {
+                    font-size: 28px;
+                    font-weight: 700;
+                    line-height: 1.35;
+                    letter-spacing: 0.84px;
+                }
+                p {
+                    font-size: 18px;
+                    margin-bottom: 24px;
+                }
+            }
+            &__right {
+                margin-top: -80px;
+            }
+        }
+        @media screen and (max-width: $lg) {
+            &__container {
+                flex-direction: column;
+                max-width: 700px;
+                margin-top: 30px;
+            }
+            &__left {
+                max-width: unset;
+                margin-right: 0;
+                margin-bottom: 16px;
+            }
+            &__right {
+                margin-top: 0;
+                max-width: 450px;
+                margin: 0 auto;
+            }
+        }
+
+        @media screen and (max-width: $sm) {
+            &__content {
+                h1 {
+                    text-align: center;
+                }
+                p {
+                    display: none;
+                }
+            }
+            &__link {
+                justify-content: center;
+                width: 100%;
+            }
+        }
+    }
+}
