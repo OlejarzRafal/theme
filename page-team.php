@@ -12,6 +12,7 @@
     get_template_part('pages/Team/content', 'cowork');
     get_template_part('pages/Team/content', 'strength');
     get_template_part('pages/Team/content', 'media');
+    get_template_part('components/content', 'brands');
   ?>
 </main>
 <?php

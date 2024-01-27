@@ -1,2 +1,82 @@
 .team-about {
+	&__container {
+		display: flex;
+		width: 100%;
+		margin-bottom: 150px;
+		margin-top: -110px;
+	}
+	&__left {
+		position: relative;
+		display: flex;
+		flex-basis: 50%;
+		&__photo1 {
+			position: relative;
+			max-width: 415px;
+			max-height: 518px;
+			border-radius: 12px;
+			transform: scaleX(-1);
+		}
+		&__photo2 {
+			position: absolute;
+			max-width: 415px;
+			max-height: 518px;
+			border-radius: 12px;
+			top: 160px;
+			left: auto;
+			right: 40px;
+		}
+	}
+	&__right {
+		display: flex;
+		flex-direction: column;
+		flex-basis: 50%;
+		margin-top: 150px;
+
+		padding: 0 40px 0 10px;
+		&__title {
+			margin: 0;
+			text-transform: uppercase;
+		}
+		&__text {
+			margin: 0;
+			p {
+				line-height: 24px;
+				strong {
+					font-size: 20px;
+					line-height: 28px;
+				}
+			}
+		}
+	}
+	@media screen and (max-width: 1199px) {
+		&__container {
+			margin-top: 56px;
+			margin-bottom: 20px;
+		}
+		&__left {
+			flex-basis: 45%;
+			&__photo1 {
+				max-width: 315px;
+				height: fit-content;
+			}
+			&__photo2 {
+				max-width: 300px;
+				top: 190px;
+				right: 17px;
+			}
+		}
+		&__right {
+			flex-basis: 55%;
+		}
+	}
+	@media screen and (max-width: 767px) {
+		&__left {
+			display: none;
+		}
+		&__right {
+			flex-basis: 100%;
+			margin-top: 0;
+			padding: 0px;
+		}
+	}
 }
