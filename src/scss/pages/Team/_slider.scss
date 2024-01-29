@@ -1,2 +1,115 @@
 .team-slider {
+	margin-bottom: 125px;
+	@media screen and (max-width: 767px) {
+		margin-bottom: 32px;
+	}
+	.swiper {
+		overflow: visible !important;
+		height: 500px;
+		@media screen and (max-width: 767px) {
+			height: fit-content;
+		}
+		.swiper-scrollbar {
+			display: none;
+			@media screen and (max-width: 767px) {
+				display: block;
+				border-radius: 95px;
+				background: rgba(228, 203, 184, 0.32);
+				padding: 2px;
+				margin-right: 15px;
+				width: 100%;
+				margin-top: 30px;
+				height: 12px;
+				.swiper-scrollbar-drag {
+					border-radius: 95px;
+					background: #1c203f;
+					height: 100%;
+				}
+			}
+		}
+		.swiper-pagination {
+			@media screen and (max-width: 767px) {
+				display: none;
+			}
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			width: 100%;
+			top: auto;
+			bottom: -80px;
+			gap: 12px;
+			.swiper-pagination-bullet {
+				width: 16px;
+				height: 12px;
+				border-radius: 95px;
+				opacity: 0.32;
+				background: #1c203f;
+				cursor: pointer;
+			}
+			.swiper-pagination-bullet-active {
+				width: 40px;
+				height: 12px;
+				border-radius: 95px;
+				background: #1c203f;
+				opacity: 1;
+				cursor: pointer;
+			}
+		}
+	}
+	.team-slide-swiper {
+		transition: all 0.3s;
+		.swiper-wrapper {
+			display: flex;
+			align-items: center;
+			left: 13.5%;
+			transition: all 0.3s;
+			.swiper-slide {
+				border-radius: 12px;
+				transition: all 0.3s;
+				width: 569px;
+				height: 394px;
+				object-fit: cover;
+				position: relative;
+				// transform: translateY(20px);
+			}
+			.swiper-slide-prev {
+				width: 482px;
+				height: 342px;
+				object-fit: cover;
+				transition: all 0.3s;
+				position: relative;
+				top: 35px;
+			}
+			.swiper-slide-active {
+				position: relative;
+				top: 35px;
+				width: 637px;
+				height: 452px;
+			}
+			.swiper-slide-next {
+				position: relative;
+				width: 569px;
+				height: 394px;
+				top: -10px;
+			}
+		}
+		@media screen and (max-width: 767px) {
+			margin: 0 auto;
+			padding: 0 15px;
+			width: 100%;
+			.swiper-wrapper {
+				left: 0;
+				.swiper-slide,
+				.swiper-slide-prev,
+				.swiper-slide-active,
+				.swiper-slide-next {
+					height: 44vw;
+					top: 0;
+					border-radius: 16px;
+					border: 1px solid #e4cbb8;
+				}
+			}
+		}
+	}
 }

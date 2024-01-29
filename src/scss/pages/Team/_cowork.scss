@@ -1,2 +1,6 @@
 .team-cowork {
+	&__title {
+		@include subtitle;
+		margin-bottom: 42px;
+	}
 }
