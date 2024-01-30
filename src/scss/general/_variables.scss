@@ -9,6 +9,12 @@ $sm: 576px;
 	letter-spacing: 1.92px;
 	margin: 0 0 12px;
 	color: #1c203f;
+	@media (max-width: 1199px) {
+		font-size: 42px;
+		font-weight: 700;
+		line-height: 1.35;
+		letter-spacing: 0.84px;
+	}
 	@media screen and (max-width: $lg) {
 		font-size: 28px;
 		font-weight: 700;
