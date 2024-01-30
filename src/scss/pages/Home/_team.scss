@@ -7,7 +7,6 @@
 		display: flex;
 		column-gap: 90px;
 		padding: 0 40px;
-		border: 1px solid red;
 		@media (max-width: 1199px) {
 			display: flex;
 			flex-direction: column;
@@ -37,7 +36,6 @@
 	}
 
 	&__main {
-		border: 1px solid red;
 		padding: 135px 0 82px;
 		border-bottom: 2px solid #d8d8d8;
 		@media (max-width: 767px) {
@@ -49,9 +47,25 @@
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
-		gap: 40px 20px;
+		gap: initial;
+		width: auto;
+		@media (max-width: 1199px) {
+			padding: 0 10px;
+			flex-wrap: nowrap;
+			width: 100%;
+			gap: initial;
+			justify-content: normal;
+		}
 	}
 	&__item-wrap {
+		width: 280px;
+		height: auto;
+		@media (max-width: 1399px) {
+			width: 240px;
+		}
+		@media (max-width: 1199px) {
+			width: 190px;
+		}
 		&:nth-child(1),
 		&:nth-child(4n + 1) {
 			.home-team__item {
@@ -94,27 +108,16 @@
 		}
 	}
 	&__item {
-		width: 280px;
-		height: 452px;
 		flex-shrink: 0;
 		border-radius: 512px;
 		position: relative;
-		&:before {
-			left: -16px;
-			top: -16px;
-			content: "";
-			position: absolute;
-			height: 100%;
-			width: 100%;
-			background: url("http://khm-kancelaria.local/wp-content/themes/theme/assets/img/team-border.svg");
-		}
+		width: 100%;
+		height: 452px;
 		@media (max-width: 1399px) {
-			width: 240px;
 			height: 386px;
-			&:before {
-				left: -10px;
-				top: -10px;
-			}
+		}
+		@media (max-width: 1199px) {
+			height: 306px;
 		}
 		img {
 			position: absolute;
@@ -126,6 +129,11 @@
 			height: 100%;
 			object-fit: contain;
 			object-position: bottom;
+            filter: grayscale(100%);
+            transition: all 0.3s;
+            &:hover{
+                filter: grayscale(0);
+            }
 		}
 		svg {
 			position: absolute;
@@ -151,6 +159,28 @@
 		&__surname {
 			color: #484c58;
 			font-weight: 900;
+		}
+	}
+	@media (max-width: 1199px) {
+		&__scrollbar {
+			margin-top: 38px;
+			display: block;
+			border-radius: 95px;
+			background: rgba(228, 203, 184, 0.32);
+			padding: 2px;
+			margin-right: 15px;
+			width: 100%;
+
+			.swiper-scrollbar {
+				display: block;
+				width: 100%;
+				height: 12px;
+				.swiper-scrollbar-drag {
+					border-radius: 95px;
+					background: #1c203f;
+					height: 100%;
+				}
+			}
 		}
 	}
 }

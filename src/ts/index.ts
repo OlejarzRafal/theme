@@ -12,6 +12,7 @@ import Swiper, {
 	Mousewheel,
 	Pagination,
 	Scrollbar,
+	Autoplay,
 } from "swiper";
 import "swiper/css";
 import { screenResize } from "./utils/screen-resize";
@@ -20,10 +21,22 @@ import { screenResize } from "./utils/screen-resize";
 
 import { homeLogos } from "./utils/home-clients-logos";
 import { homeLaws } from "./utils/home-law";
+import { homeTeamSlider } from "./utils/home-team-slider";
+import { homeRecomendationSlider } from "./utils/home-recomendations";
 import { teamSlider } from "./utils/team-slider";
 import { offerBox } from "./utils/law-offer-box";
+import { homeLogotypeSlider } from "./utils/home-logotype";
+import { accordion } from "./utils/law-accordion";
+import { loader } from "./utils/loader";
 
-Swiper.use([Navigation, EffectFade, Mousewheel, Pagination, Scrollbar]);
+Swiper.use([
+	Navigation,
+	EffectFade,
+	Mousewheel,
+	Pagination,
+	Scrollbar,
+	Autoplay,
+]);
 
 const isPage = (name: string): boolean =>
 	document.body.classList.contains(name);
@@ -41,10 +54,20 @@ document.addEventListener("DOMContentLoaded", () => {
 	homeLaws();
 	offerBox();
 	teamSlider(Swiper);
+	homeTeamSlider(Swiper);
+	homeRecomendationSlider(Swiper);
+	homeLogotypeSlider(Swiper);
+	accordion();
+	loader();
 	// pagination()
 });
-
 
 window.onpageshow = function (event) {
 	if (event.persisted) window.location.reload();
 };
+
+$(window).on("load", function () {
+	setTimeout(function () {
+		$(".preloader").fadeOut(200);
+	}, 200);
+});

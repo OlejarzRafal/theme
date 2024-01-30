@@ -12,7 +12,7 @@
           <h2 class="footer-top__title">Odezwij sie do nas!</h2>
         </div>
         <div class="footer-top__right">
-          <a href="/kontalt" class="footer-top__contact">
+          <a href="/kontakt" class="footer-top__contact">
             Przejdź do kontaktu
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
               <path fill-rule="evenodd" clip-rule="evenodd"
