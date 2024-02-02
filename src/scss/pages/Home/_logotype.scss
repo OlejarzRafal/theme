@@ -1,6 +1,11 @@
 .home-logotype {
 	margin: 86px 0 118px 0;
 	// border: 1px solid red;
+	@media (max-width: 1199px) {
+		margin: 0;
+		padding: 10px 0 40px 0;
+		background: rgba(148, 57, 11, 0.08);
+	}
 	&__container {
 		overflow: hidden;
 	}
@@ -9,6 +14,9 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		@media (max-width: 1199px) {
+			height: 74px;
+		}
 	}
 	img {
 		width: auto;

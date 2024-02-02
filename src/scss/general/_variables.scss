@@ -9,6 +9,9 @@ $sm: 576px;
 	letter-spacing: 1.92px;
 	margin: 0 0 12px;
 	color: #1c203f;
+    @media(max-width:1440px){
+        font-size:56px;
+    }
 	@media (max-width: 1199px) {
 		font-size: 42px;
 		font-weight: 700;

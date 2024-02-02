@@ -1,4 +1,10 @@
 [data-id="law-single"] {
-	@import "./hero";
 	@import "./content";
+	.contents-brands {
+		background: rgb(148 57 11 / 8%);
+        padding:104px 0;
+        @media(max-width:991px){
+            padding:44px 0;
+        }
+	}
 }

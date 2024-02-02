@@ -1,8 +1,16 @@
 .home-reviews {
 	margin-top: 88px;
+	@media (max-width: 1199px) {
+        padding:50px 0;
+        margin-top:10px;
+		background: rgba(148, 57, 11,0.08);
+	}
 	&__title {
 		@include section-title;
 		text-align: center;
+		@media (max-width: 1199px) {
+			text-align: left;
+		}
 	}
 	&__list {
 		margin: 44px 72px 0 72px;

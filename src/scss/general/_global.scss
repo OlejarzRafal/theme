@@ -17,6 +17,34 @@ html {
 
 body {
 	position: relative;
+	z-index: 2;
+	.bg-splash {
+		position: absolute;
+		z-index: -1;
+		height: auto;
+		pointer-events: none;
+		&--1 {
+			top: 0;
+			left: 0;
+			width: 100%;
+		}
+		&--2 {
+			top: 0;
+			left: 0;
+			width: auto;
+		}
+		&--3 {
+			top: 15%;
+			right: 0;
+			@media (max-width: 767px) {
+				display: none;
+			}
+		}
+		&--4 {
+			top:40%;
+			left: 0;
+		}
+	}
 	// .overlay {
 	// 	// mix-blend-mode: difference;
 	// 	display: none;

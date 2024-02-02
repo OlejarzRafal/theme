@@ -1,4 +1,4 @@
-<section data-id="home-law">
+<section data-id="home-law" id="oferta">
     <div class="home-law__container">
         <div class="home-law__main">
             <div class="home-law__toggle" data-active="tab1">

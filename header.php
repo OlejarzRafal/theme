@@ -2,7 +2,17 @@
 <html <?php language_attributes(); ?>>
 
 <head>
+    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+    <!-- remove bellow after migrate to correct domain -->
+    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+    <meta name="googlebot" content="noindex">
+    <meta name="googlebot-news" content="nosnippet">
+    <meta name=”robots” content=”noindex, nofollow”>
+    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 
+
+    
+    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
     <!-- Google -->
     <meta name="description" content="<?php bloginfo('description'); ?>" />
 
@@ -36,13 +46,24 @@
 </head>
 
 <body class="<?php if (is_front_page()) : ?>home<?php else : ?>page_<?= get_the_ID(); ?><?php endif; ?>">
+
+    <div class="bg-splash bg-splash--1"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-splash-1.png"></div>
+    <div class="bg-splash bg-splash--2"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-splash-2.png"></div>
+    <div class="bg-splash bg-splash--3"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-splash-3.png"></div>
+    <?php if (is_page(7) || is_page(61)) : ?>
+        <div class="bg-splash bg-splash--4"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-splash-4.png"></div>
+    <?php endif; ?>
+
+
     <div class="preloader"></div>
+
     <header id="header">
         <div class="header__inner">
             <div class="header__container">
                 <?php get_template_part('components/content', 'header-top') ?>
                 <?php get_template_part('components/content', 'header-main') ?>
                 <?php get_template_part('components/content', 'header-mobile') ?>
+                <?php get_template_part('components/content', 'header-top-fixed') ?>
             </div>
         </div>
     </header>

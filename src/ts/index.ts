@@ -1,11 +1,13 @@
 //@ts-nocheck
 import "../scss/style.scss";
 import { navigation } from "./utils/navigation";
+import { fixedHeader } from "./utils/navigation";
 // import { pagination } from './utils/pagination'
 import { transition } from "./utils/transition";
 import { animation } from "./utils/animation";
 import { blog } from "./utils/blog";
 import { newsPagination } from "./utils/news-pagination";
+import { blogPagination } from "./utils/news-pagination";
 import Swiper, {
 	Navigation,
 	EffectFade,
@@ -27,7 +29,8 @@ import { teamSlider } from "./utils/team-slider";
 import { offerBox } from "./utils/law-offer-box";
 import { homeLogotypeSlider } from "./utils/home-logotype";
 import { accordion } from "./utils/law-accordion";
-import { loader } from "./utils/loader";
+import { breadcrumbs } from "./utils/breadcrumbs";
+import { teamPersonMobile } from "./utils/team-person-mobile";
 
 Swiper.use([
 	Navigation,
@@ -45,12 +48,14 @@ const isPage = (name: string): boolean =>
 //     import("./utils/faq").then(({ faq }) => faq());
 // }
 document.addEventListener("DOMContentLoaded", () => {
+	fixedHeader();
 	transition();
 	navigation();
 	animation();
 	blog(Swiper);
 	homeLogos(Swiper);
 	newsPagination();
+	blogPagination();
 	homeLaws();
 	offerBox();
 	teamSlider(Swiper);
@@ -58,7 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	homeRecomendationSlider(Swiper);
 	homeLogotypeSlider(Swiper);
 	accordion();
-	loader();
+	breadcrumbs();
+	teamPersonMobile();
 	// pagination()
 });
 

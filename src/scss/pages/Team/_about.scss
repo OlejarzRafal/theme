@@ -3,7 +3,7 @@
 		display: flex;
 		width: 100%;
 		margin-bottom: 150px;
-		margin-top: -110px;
+		margin-top: -50px;
 	}
 	&__left {
 		position: relative;
@@ -14,7 +14,6 @@
 			max-width: 415px;
 			max-height: 518px;
 			border-radius: 12px;
-			transform: scaleX(-1);
 		}
 		&__photo2 {
 			position: absolute;

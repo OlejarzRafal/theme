@@ -1,7 +1,7 @@
 //@ts-ignore
 export const homeTeamSlider = (Swiper: any) => {
 	const contentTeam = document.querySelector(".home-team__main");
-	console.log(contentTeam);
+	// console.log(contentTeam);
 	if (!contentTeam || window.innerWidth >= 1199) return;
 	new Swiper(contentTeam, {
 		slidesPerView: "auto",

@@ -1,6 +1,8 @@
 <section data-id="home-reviews" class="home-reviews">
     <div class="home-reviews__container">
-        <h2 class="home-reviews__title">Rekomendacje naszych Klientów</h2>
+        <?php if ($home_recomendations_header = get_field('home_recomendations_header')) : ?>
+            <h2 class="home-reviews__title"><?php echo esc_html($home_recomendations_header); ?></h2>
+        <?php endif; ?>
     </div>
     <div class="home-reviews__list">
         <div class="swiper-wrapper">

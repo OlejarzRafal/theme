@@ -17,27 +17,37 @@
         <div class="c-blog-list">
             <div class="swiper-wrapper">
                 <?php
-                foreach (range(0, 10) as $index) {
-                    // Your code here
-                    echo '
-            <div class="swiper-slide">
-              <a href="" class="c-blog-list__item blog-item">
-                <div class="blog-item__image">
-                  <img src="http://khm-kancelaria.local/wp-content/uploads/2024/01/HEADER_x5F_HOME_x5F_VE_xA0_Obraz-min-scaled.jpg" alt="">
-                </div>
-                <div class="blog-item__content">
-                  <span>Olaf Maciejowski</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="4" height="5" viewBox="0 0 4 5" fill="none">
-                    <circle cx="2" cy="2.5" r="2" fill="#484C58" />
-                  </svg>
-                  <span>5.04.2023</span>
-                </div>
-                <div class="blog-item__title">Prawomocna wygrana z mBankiem w niecałe 13 miesięcy</div>
-              </a>
-            </div>
-            ';
-                }
-                ?>
+                $args = array(
+                    'post_type' => 'post',
+                    'posts_per_page' => 10,
+                    'orderby' => 'date',
+                    'order' => 'DESC'
+                );
+                $query = new WP_Query($args);
+                if ($query->have_posts()) :
+                    while ($query->have_posts()) : $query->the_post(); ?>
+                        <div class="swiper-slide">
+                            <a href="<?php the_permalink(); ?>" class="c-blog-list__item blog-item">
+                                <div class="blog-item__image">
+                                    <?php if (has_post_thumbnail()) : ?>
+                                        <?php the_post_thumbnail(); ?>
+                                    <?php else : ?>
+                                        <img src="http://khm-kancelaria.local/wp-content/uploads/2024/01/ASSET_x5F_ZESPOL_xA0_Obraz-min.jpg" alt="">
+                                    <?php endif; ?>
+                                </div>
+                                <div class="blog-item__content">
+                                    <span><?php echo get_the_author(); ?></span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="4" height="5" viewBox="0 0 4 5" fill="none">
+                                        <circle cx="2" cy="2.5" r="2" fill="#484C58" />
+                                    </svg>
+                                    <span><?php the_date('d.m.Y'); ?></span>
+                                </div>
+                                <div class="blog-item__title"><?php the_title(); ?></div>
+                            </a>
+                        </div>
+                <?php endwhile;
+                    wp_reset_postdata();
+                endif; ?>
             </div>
             <div class="c-blog__footer">
                 <div class="c-blog__controls">

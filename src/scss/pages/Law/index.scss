@@ -1,4 +1,17 @@
 [data-id="law"] {
 	@import "./text";
 	@import "./offerBox";
+	.contents-brands {
+		margin: 104px 0;
+		@media (max-width: 991px) {
+			margin: 40px 0;
+			padding: 40px 0;
+			background: rgb(148 57 11 / 8%);
+		}
+	}
+	.c-blog {
+		@media (max-width: 991px) {
+			margin-top: 40px;
+		}
+	}
 }

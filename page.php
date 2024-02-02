@@ -1,12 +1,13 @@
 <?php
 get_header(); ?>
 
-<main data-id="page-default" class="page-dafault">
+<main data-id="subpage" class="subpage">
     <?php
-    get_template_part('components/content', 'hero'); ?>
-
-    <div class="page-dafault__container">
-        <?php the_content(); ?>
+    get_template_part('components/content', 'hero-single'); ?>
+    <div class="subpage__container">
+        <div class="subpage__content default-content-style">
+            <?php the_content(); ?>
+        </div>
     </div>
 </main>
 
