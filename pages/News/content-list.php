@@ -16,7 +16,7 @@
                             <?php if (has_post_thumbnail()) : ?>
                                 <?php the_post_thumbnail(); ?>
                             <?php else : ?>
-                                <img src="http://khm-kancelaria.local/wp-content/uploads/2024/01/ASSET_x5F_ZESPOL_xA0_Obraz-min.jpg" alt="">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/plug.jpg">
                             <?php endif; ?>
                         </div>
 
