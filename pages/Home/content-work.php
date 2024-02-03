@@ -14,7 +14,8 @@
                         $link_title = $link['title'];
                         $link_target = $link['target'] ? $link['target'] : '_self';
                     ?>
-                        <a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>" class="home-work__item">
+
+                        <a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>" class="home-work__item <?php if (get_field('home_work_boxs_active_link')) : ?> home-work__item--active <?php endif; ?>">
                             <?php
                             $grafika = get_sub_field('grafika');
                             if ($grafika) : ?>

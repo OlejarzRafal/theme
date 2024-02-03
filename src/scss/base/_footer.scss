@@ -61,7 +61,7 @@
                 position: relative;
                 transition: opacity 0.3s ease-in-out;
                 &:hover {
-                    opacity: 0.8;
+                    opacity: 0.7;
                 }
                 &::before {
                     content: "";
@@ -166,7 +166,7 @@
                                 transition: opacity 0.2s ease-in-out;
                                 display: block;
                                 &:hover {
-                                    opacity: 0.8;
+                                    opacity: 0.7;
                                 }
                             }
                             &.email {

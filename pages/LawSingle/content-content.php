@@ -1,5 +1,5 @@
 <?php
-$children_prawo_gospodarcze = get_pages(array('child_of' => 53));
+// $children_prawo_gospodarcze = get_pages(array('child_of' => 53));
 // $children_prawo_bankowe = get_pages(array('child_of' => 57));
 ?>
 
@@ -21,14 +21,12 @@ $children_prawo_gospodarcze = get_pages(array('child_of' => 53));
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M1.29289 5.70711L7.65685 12.0711C8.04738 12.4616 8.68054 12.4616 9.07107 12.0711L15.435 5.70711C15.8256 5.31658 15.8256 4.68342 15.435 4.29289C15.0445 3.90237 14.4113 3.90237 14.0208 4.29289L8.36396 9.94975L2.70711 4.29289C2.31658 3.90237 1.68342 3.90237 1.29289 4.29289C0.902369 4.68342 0.902369 5.31658 1.29289 5.70711Z" fill="#484C58" />
                         </svg></div>
                     <?php
-
                     $args = array(
                         'child_of' => 53,
-                        'sort_column' => 'menu_order'
+                        'sort_column' => 'menu_order',
+                        'order' => 'ASC',
                     );
                     $children_pages = get_pages($args);
-
-                    // Wyświetl podstrony
                     if ($children_pages) {
                         echo '<ul class="submenu">';
                         foreach ($children_pages as $child_page) {
@@ -46,15 +44,21 @@ $children_prawo_gospodarcze = get_pages(array('child_of' => 53));
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M1.29289 5.70711L7.65685 12.0711C8.04738 12.4616 8.68054 12.4616 9.07107 12.0711L15.435 5.70711C15.8256 5.31658 15.8256 4.68342 15.435 4.29289C15.0445 3.90237 14.4113 3.90237 14.0208 4.29289L8.36396 9.94975L2.70711 4.29289C2.31658 3.90237 1.68342 3.90237 1.29289 4.29289C0.902369 4.68342 0.902369 5.31658 1.29289 5.70711Z" fill="#484C58" />
                         </svg></div>
                     <?php
-                    if ($children_prawo_bankowe) {
+                    $args = array(
+                        'child_of' => 57,
+                        'sort_column' => 'menu_order'
+                    );
+                    $children_pages = get_pages($args);
+                    if ($children_pages) {
                         echo '<ul class="submenu">';
-                        foreach ($children_prawo_bankowe as $child_b) {
-                            $child_title = $child_b->post_title;
-                            $child_link = get_permalink($child_b->ID);
+                        foreach ($children_pages as $child_page) {
+                            $child_title = $child_page->post_title;
+                            $child_link = get_permalink($child_page->ID);
                             echo '<li><a href="' . $child_link . '">' . $child_title . '</a></li>';
                         }
                         echo '</ul>';
                     }
+
                     ?>
                 </li>
             </ul>
