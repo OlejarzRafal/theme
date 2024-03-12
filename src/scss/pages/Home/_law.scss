@@ -101,7 +101,7 @@
 			width: 50%;
 			padding-right: 64px;
 			// margin-right: 64px;
-			border: 1px solid red;
+			// border: 1px solid red;
 		}
 		&__title {
 			font-size: 48px;
@@ -148,6 +148,7 @@
 			justify-content: space-between;
 			span {
 				transition: all 0.25s;
+                width: calc(100% - 32px);
 			}
 			&:before {
 				content: "";

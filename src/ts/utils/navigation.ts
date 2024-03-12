@@ -23,24 +23,17 @@ export const navigation = () => {
 		body.classList.remove("open");
 	});
 
-	// submenus.forEach((submenu) => {
-	//   submenu.addEventListener('click', (e) => {
-	//     const target = e.target as HTMLDivElement
-	//     if (target.closest('.sub-menu')) return
-	//     const sub = submenu.querySelector('.sub-menu') as HTMLDivElement
-	//     if (!submenu) return
-	//     submenu.classList.toggle('--active')
+	submenus.forEach((submenu) => {
+	  submenu.addEventListener('click', (e) => {
+	    const target = e.target as HTMLDivElement
+	    if (target.closest('.sub-menu')) return
+	    const sub = submenu.querySelector('.sub-menu') as HTMLDivElement
+	    if (!submenu) return
+	    submenu.classList.toggle('--active')
+	  })
+	})
 
-	//     if (submenu.classList.contains('--active')) {
-	//       const scrollHeight = sub.scrollHeight
-	//       sub.style.minHeight = `${scrollHeight}px`
-	//       sub.style.maxHeight = `${scrollHeight}px`
-	//     } else {
-	//       sub.style.minHeight = '0'
-	//       sub.style.maxHeight = '0'
-	//     }
-	//   })
-	// })
+
 
 	screenResize(500, injectSVGToFooter);
 };

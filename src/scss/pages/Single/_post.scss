@@ -31,6 +31,13 @@
 		padding-top: 60px;
 		padding-bottom: 100px;
 		border-radius: 0 0 32px 32px;
+        @media(min-width:1920px){
+            margin:0 150px 70px;
+        }
+        &--noPhoto{
+            border-radius: 32px;
+            margin-top:30px;
+        }
 		@media (max-width: 1199px) {
 			width: calc(100% + 32px);
 			position: relative;

@@ -7,6 +7,7 @@
                 'post_type' => 'page',
                 'orderby' => 'menu_order',
                 'order' => 'ASC',
+                'posts_per_page' => -1,
             );
 
             $child_pages_query = new WP_Query($args);
@@ -21,7 +22,10 @@
                     <a href="<?php echo $child_link ?>" class="law-items__item">
                         <div class="law-items__desc">
                             <h3><?php echo $child_title; ?></h3>
-                            <p><?php echo $child_excerpt; ?></p>
+                            <?php if (!empty($child_excerpt)) : ?>
+                                <p><?php echo $child_excerpt; ?></p>
+                            <?php endif; ?>
+
                         </div>
                         <div class="button-link law-items__btn">
                             Więcej informacji

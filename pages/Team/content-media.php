@@ -13,6 +13,7 @@
             </div>
             <div class="c-blog-list">
                 <div class="swiper-wrapper">
+                    <?php $x=1; ?>
                     <?php if (have_rows('boxy')) : ?>
                         <?php while (have_rows('boxy')) :
                             the_row(); ?>
@@ -38,25 +39,32 @@
                                     </a>
                                 <?php endif; ?>
                             </div>
+                            <?php $x++ ?>
                         <?php endwhile; ?>
                     <?php endif; ?>
                 </div>
+
+
                 <div class="c-blog__footer">
-                    <div class="c-blog__controls">
-                        <div class="swiper-button-prev">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
-                                <path d="M23.0256 10.025L3.73207 10.0254L11.9754 1.78223L10.5968 0.403664L7.86365e-05 11.0003L10.5968 21.5968L11.9754 20.2183L3.73202 11.975L23.0256 11.9745L23.0256 10.025Z" fill="#A7A7A7" />
-                            </svg>
+                    <?php if ($x > 4) : ?>
+                        <div class="c-blog__controls">
+                            <div class="swiper-button-prev">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+                                    <path d="M23.0256 10.025L3.73207 10.0254L11.9754 1.78223L10.5968 0.403664L7.86365e-05 11.0003L10.5968 21.5968L11.9754 20.2183L3.73202 11.975L23.0256 11.9745L23.0256 10.025Z" fill="#A7A7A7" />
+                                </svg>
+                            </div>
+                            <div class="swiper-button-next">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
+                                    <path d="M0.974368 11.975L20.2679 11.9746L12.0246 20.2178L13.4032 21.5963L23.9999 10.9997L13.4032 0.403155L12.0246 1.78172L20.268 10.025L0.974368 10.0255L0.974368 11.975Z" fill="#FDEFEF" />
+                                </svg>
+                            </div>
                         </div>
-                        <div class="swiper-button-next">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
-                                <path d="M0.974368 11.975L20.2679 11.9746L12.0246 20.2178L13.4032 21.5963L23.9999 10.9997L13.4032 0.403155L12.0246 1.78172L20.268 10.025L0.974368 10.0255L0.974368 11.975Z" fill="#FDEFEF" />
-                            </svg>
+
+                        <div class="c-blog__pagination">
+                            <div class="swiper-pagination"></div>
                         </div>
-                    </div>
-                    <div class="c-blog__pagination">
-                        <div class="swiper-pagination"></div>
-                    </div>
+                    <?php endif; ?>
+
                     <div class="c-blog__scrollbar">
                         <div class="swiper-scrollbar"></div>
                     </div>

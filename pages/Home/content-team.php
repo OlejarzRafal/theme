@@ -9,7 +9,10 @@
             <?php endif; ?>
         </div>
         <div class="home-team__main">
-            <div class="home-team__items swiper-wrapper">
+
+            <div class="swiper-wrapper">
+
+
                 <?php if (have_rows('home_person_carosuel')) : ?>
                     <?php $x = 1; ?>
                     <?php while (have_rows('home_person_carosuel')) : the_row(); ?>
@@ -44,8 +47,9 @@
                         <?php $x = ($x % 4) + 1; ?>
                     <?php endwhile; ?>
                 <?php endif; ?>
-
             </div>
+            
+
             <div class="home-team__scrollbar">
                 <div class="swiper-scrollbar"></div>
             </div>

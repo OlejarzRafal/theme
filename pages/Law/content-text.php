@@ -1,3 +1,4 @@
+<?php if ($law_sec2_header = get_field('law_sec2_header')) : ?>
 <section data-id="law-text" class="law-text">
     <div class="law-text__container">
         <div class="law-text__header-top">
@@ -18,3 +19,4 @@
         </div>
     </div>
 </section>
+<?php endif;?>

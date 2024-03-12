@@ -7,6 +7,10 @@ export const homeRecomendationSlider = (Swiper: any) => {
 	new Swiper(homeRecomendationSlider, {
 		slidesPerView: 1.15,
 		spaceBetween: 16,
+		loop: true,
+		autoplay: {
+			enabled: false,
+		},
 		speed: 1000,
 		scrollbar: {
 			el: ".swiper-scrollbar",
@@ -32,9 +36,12 @@ export const homeRecomendationSlider = (Swiper: any) => {
 			1200: {
 				loop: true,
 				autoplay: {
-					delay: 2000,
+                    enabled: true,
+					delay: 3000,
 					disableOnInteraction: false,
+					pauseOnMouseEnter: true,
 				},
+				speed: 1000,
 				slidesPerView: 3,
 				spaceBetween: 20,
 			},
