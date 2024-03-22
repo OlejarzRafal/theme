@@ -2,7 +2,7 @@
     <div class="contents-brands__container">
         <div class="contents-brands__left">
             <?php if ($brand_title = get_field('brand_title', 'option')) : ?>
-                <h2 class="contents-brands__left__title"><?php echo esc_html($brand_title); ?></h2>
+                <p class="contents-brands__left__title"><?php echo esc_html($brand_title); ?></p>
             <?php endif; ?>
             <?php if ($brand_text = get_field('brand_text', 'option')) : ?>
                 <div class="contents-brands__left__text"><?php echo esc_html($brand_text); ?></div>

@@ -2,12 +2,12 @@
 import "../scss/style.scss";
 import { navigation } from "./utils/navigation";
 import { fixedHeader } from "./utils/navigation";
-// import { pagination } from './utils/pagination'
+import { pagination } from './utils/pagination'
 import { transition } from "./utils/transition";
 import { animation } from "./utils/animation";
 import { blog } from "./utils/blog";
 import { newsPagination } from "./utils/news-pagination";
-import { blogPagination } from "./utils/news-pagination";
+// import { blogPagination } from "./utils/news-pagination";
 import Swiper, {
 	Navigation,
 	EffectFade,
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	blog(Swiper);
 	homeLogos(Swiper);
 	newsPagination();
-	blogPagination();
+	// blogPagination();
 	homeLaws();
 	offerBox();
 	teamSlider(Swiper);

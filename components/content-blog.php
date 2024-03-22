@@ -2,7 +2,7 @@
     <div class="c-blog__container">
         <div class="c-blog-top">
             <div class="c-blog-top__left">
-                <h2 class="c-blog-top__title">Blog</h2>
+                <p class="c-blog-top__title">Blog</p>
                 <p class="c-blog-top__text">To może Cię zainteresować</p>
             </div>
             <div class="c-blog-top__right">

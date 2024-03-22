@@ -7,10 +7,10 @@
             <div class="footer-top">
                 <div class="footer-top__left">
                     <?php if ($footer_header_o = get_field('footer_header_o', 'options')) : ?>
-                        <h3 class="footer-top__subtitle"><?php echo $footer_header_o; ?></h3>
+                        <p class="footer-top__subtitle"><?php echo $footer_header_o; ?></p>
                     <?php endif; ?>
                     <?php if ($footer_header2_o = get_field('footer_header2_o', 'options')) : ?>
-                        <h2 class="footer-top__title"><?php echo $footer_header2_o; ?></h2>
+                        <p class="footer-top__title"><?php echo $footer_header2_o; ?></p>
                     <?php endif; ?>
                 </div>
                 <div class="footer-top__right">
