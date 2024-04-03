@@ -28,7 +28,7 @@
                         } else {
                             $content = get_the_content();
                             $content = strip_tags($content);
-                            $excerpt = substr($content, 0, 100);
+                            $excerpt = substr($content, 0, 115);
                             echo '<p class="news-item__text">' . $excerpt . '...</p>';
                         }
                         ?>

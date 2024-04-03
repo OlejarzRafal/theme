@@ -1,4 +1,4 @@
-body:not([class*="page-paged-"]) {
+body:not([class*="page-paged"]):not(.archive) {
 	[data-id="blog"] {
 		.news-list {
 			&__main {
@@ -132,6 +132,7 @@ body:not([class*="page-paged-"]) {
 					font-weight: 700;
 					line-height: 1.4;
 					margin: 0 8px 12px;
+					transition: all 0.2s;
 				}
 				&__text {
 					color: #484c58;
@@ -184,32 +185,25 @@ body:not([class*="page-paged-"]) {
 				margin-top: 24px;
 				margin-bottom: 72px;
 			}
-			.prev {
+			.prev,.next{
 				border-radius: 60px;
 				border: 2px solid #a7a7a7;
 				padding: 8px 21px;
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				cursor: pointer;
+                cursor: not-allowed;
 				transition: opacity 0.3s ease-in-out;
+                pointer-events: none;
 				&:hover {
 					opacity: 0.7;
 				}
-			}
-			.next {
-				border-radius: 60px;
-				border: 2px solid #1c203f;
-				padding: 8px 21px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				cursor: pointer;
-				background: #1c203f;
-				transition: opacity 0.3s ease-in-out;
-				&:hover {
-					opacity: 0.7;
-				}
+                &.active{
+                    border: 2px solid #1c203f;
+                    background: #1c203f;
+                    cursor: pointer;
+                    pointer-events: all;
+                }
 			}
 			ul {
 				padding: 0;

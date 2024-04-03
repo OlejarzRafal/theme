@@ -31,6 +31,7 @@ import { homeLogotypeSlider } from "./utils/home-logotype";
 import { accordion } from "./utils/law-accordion";
 import { breadcrumbs } from "./utils/breadcrumbs";
 import { teamPersonMobile } from "./utils/team-person-mobile";
+import { showMoreBtn } from "./utils/show-more-btn";
 
 Swiper.use([
 	Navigation,
@@ -65,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	accordion();
 	breadcrumbs();
 	teamPersonMobile();
+    showMoreBtn();
 	// pagination()
 });
 

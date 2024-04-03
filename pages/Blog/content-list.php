@@ -43,7 +43,7 @@
                             } else {
                                 $content = get_the_content();
                                 $content = strip_tags($content);
-                                $excerpt = substr($content, 0, 100);
+                                $excerpt = substr($content, 0, 115);
                                 echo '<p class="news-item__text">' . $excerpt . '...</p>';
                             }
                             ?>
@@ -67,11 +67,15 @@
         <div class="news-list__pagination">
             <ul class="pagination__list">
                 <li class="pagination__item">
-                    <a href="<?php echo previous_posts($query->max_num_pages, false); ?>" class="page-link prev">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M23.0256 12.975L3.73207 12.9746L11.9754 21.2178L10.5968 22.5963L7.7625e-05 11.9997L10.5968 1.40315L11.9754 2.78172L3.73202 11.025L23.0256 11.0255L23.0256 12.975Z" fill="#B5ADB7"></path>
-                        </svg>
-                    </a>
+                    <?php if ($paged > 1) : ?>
+                        <a href="<?php echo previous_posts($query->max_num_pages, false); ?>" class="page-link prev active">
+                        <?php else : ?>
+                            <a class="page-link prev">
+                            <?php endif; ?>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M23.0256 12.975L3.73207 12.9746L11.9754 21.2178L10.5968 22.5963L7.7625e-05 11.9997L10.5968 1.40315L11.9754 2.78172L3.73202 11.025L23.0256 11.0255L23.0256 12.975Z" fill="#B5ADB7"></path>
+                            </svg>
+                            </a>
                 </li>
                 <?php
                 // Paginacja
@@ -96,17 +100,20 @@
                 }
                 ?>
                 <li class="pagination__item">
-                    <a href="<?php echo next_posts($query->max_num_pages, false); ?>" class="page-link next">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M0.974368 12.975L20.2679 12.9746L12.0246 21.2178L13.4032 22.5963L23.9999 11.9997L13.4032 1.40315L12.0246 2.78172L20.268 11.025L0.974368 11.0255Z" fill="#FDEFEF"></path>
-                        </svg>
-                    </a>
+                    <?php if ($paged < $query->max_num_pages) : ?>
+                        <a href="<?php echo next_posts($query->max_num_pages, false); ?>" class="page-link next active">
+                        <?php else : ?>
+                            <a class="page-link next">
+                            <?php endif; ?>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M0.974368 12.975L20.2679 12.9746L12.0246 21.2178L13.4032 22.5963L23.9999 11.9997L13.4032 1.40315L12.0246 2.78172L20.268 11.025L0.974368 11.0255Z" fill="#B5ADB7"></path>
+                            </svg>
+                            </a>
                 </li>
-
-
             </ul>
         </div>
         <!-- Koniec paginacji -->
+
 
     </div>
 </section>
