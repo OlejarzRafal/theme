@@ -4,4 +4,9 @@
 	@import "./slider";
 	@import "./strength";
 	@import "./team";
+    .contents-brands{
+        @media(max-width:767px){
+            margin:40px 0;
+        }
+    }
 }

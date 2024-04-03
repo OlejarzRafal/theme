@@ -1,0 +1,8 @@
+.subpage {
+	&__content {
+		margin: 70px 0;
+        @media(max-width:991px){
+            margin:40px 0;
+        }
+	}
+}

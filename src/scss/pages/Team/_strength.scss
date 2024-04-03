@@ -1,5 +1,5 @@
 .team-strength {
-	background-color: #ede7e6;
+	background-color: rgba(148, 57, 11, 0.08);
 	padding: 48px 0 68px;
 	@media screen and (max-width: 991px) {
 		padding: 48px 0 28px;
@@ -24,6 +24,7 @@
 			align-items: flex-start;
 			padding: 0 36px 0 32px;
 			border-right: 2px dashed #a7a7a7;
+            flex:1;
 			svg {
 				margin-bottom: 32px;
 			}
@@ -41,7 +42,8 @@
 				font-style: normal;
 				font-weight: 500;
 				line-height: normal;
-				max-width: 282px;
+				// max-width: 282px;
+                max-width: 100%;
 			}
 			&:nth-last-child(1) {
 				border-right: 2px transparent;

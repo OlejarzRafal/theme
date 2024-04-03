@@ -4,7 +4,11 @@ body {
 	scroll-behavior: smooth;
 	margin: 0;
 	padding: 0;
-	background-color: #f5f5f5;
+	background-image: url("../../assets/img/bg-pattern.jpg");
+	background-repeat: repeat;
+	&.overflow-hidden {
+		overflow: hidden;
+	}
 }
 html {
 	scroll-padding-top: 100px;
@@ -13,23 +17,56 @@ html {
 
 body {
 	position: relative;
-	.overlay {
-		// mix-blend-mode: difference;
-		display: none;
+	z-index: 2;
+	.bg-splash {
 		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		// opacity: 0.12;
-		// display: block;
+		z-index: -1;
+		height: auto;
+		pointer-events: none;
+		&--1 {
+			top: 0;
+			left: 0;
+			width: 100%;
+			display: flex;
+			justify-content: flex-end;
+			img {
+				width: 100%;
+			}
+		}
+		&--2 {
+			top: 0;
+			left: 0;
+			width: auto;
+		}
+		&--3 {
+			top: 15%;
+			right: 0;
+			@media (max-width: 767px) {
+				display: none;
+			}
+		}
+		&--4 {
+			top: 40%;
+			left: 0;
+		}
 	}
-	// main,
-	// header,
-	// footer {
-	//   position: relative;
-	//   z-index: 1;
+	// .overlay {
+	// 	// mix-blend-mode: difference;
+	// 	display: none;
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	// opacity: 0.12;
+	// 	// display: block;
 	// }
+	// // main,
+	// // header,
+	// // footer {
+	// //   position: relative;
+	// //   z-index: 1;
+	// // }
 }
 
 * {

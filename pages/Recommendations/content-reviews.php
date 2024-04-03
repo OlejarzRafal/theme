@@ -3,7 +3,6 @@
         <h2 class="recommendations-reviews__title"><?php the_field('clients-title'); ?></h2>
         <div class="recommendations-reviews__list">
             <div class="recommendations-reviews__column">
-
                 <?php if (have_rows('clients-list')) : ?>
                     <?php while (have_rows('clients-list')) : the_row();
                         $logo = get_sub_field('logo');

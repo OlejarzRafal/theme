@@ -2,7 +2,17 @@
 <html <?php language_attributes(); ?>>
 
 <head>
+    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+    <!-- remove bellow after migrate to correct domain -->
+    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+    <meta name="googlebot" content="noindex">
+    <meta name="googlebot-news" content="nosnippet">
+    <meta name=”robots” content=”noindex, nofollow”>
+    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 
+
+
+    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
     <!-- Google -->
     <meta name="description" content="<?php bloginfo('description'); ?>" />
 
@@ -29,25 +39,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-    <style>
-        .transition-1 {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 9999999;
-            opacity: 0;
-            pointer-events: none;
-            transition: 0.5s ease-in-out;
-            background-color: #ffffff;
-        }
-
-        .transition-1.is-active {
-            pointer-events: all;
-            opacity: 1;
-        }
-    </style>
     <!-- styles and scripts in functions.php -->
 
 
@@ -55,16 +46,24 @@
 </head>
 
 <body class="<?php if (is_front_page()) : ?>home<?php else : ?>page_<?= get_the_ID(); ?><?php endif; ?>">
-    <span class="overlay" style="background: url(<?php echo get_template_directory_uri(); ?>/assets/img/background.svg)">
-    </span>
-    <!-- <div class="transition transition-1 is-active"></div> -->
-    <!-- <div class="placeholder"></div> -->
+
+    <div class="bg-splash bg-splash--1"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-splash-1.png" alt="splash-1"></div>
+    <div class="bg-splash bg-splash--2"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-splash-2.png" alt="splash-2"></div>
+    <div class="bg-splash bg-splash--3"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-splash-3.png" alt="splash-3"></div>
+    <?php if (is_page(7) || is_page(61)) : ?>
+        <div class="bg-splash bg-splash--4"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-splash-4.png" alt="splash-4"></div>
+    <?php endif; ?>
+
+
+    <div class="preloader"></div>
+
     <header id="header">
         <div class="header__inner">
             <div class="header__container">
                 <?php get_template_part('components/content', 'header-top') ?>
                 <?php get_template_part('components/content', 'header-main') ?>
                 <?php get_template_part('components/content', 'header-mobile') ?>
+                <?php get_template_part('components/content', 'header-top-fixed') ?>
             </div>
         </div>
     </header>
