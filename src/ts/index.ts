@@ -2,7 +2,7 @@
 import "../scss/style.scss";
 import { navigation } from "./utils/navigation";
 import { fixedHeader } from "./utils/navigation";
-import { pagination } from './utils/pagination'
+import { pagination } from "./utils/pagination";
 import { transition } from "./utils/transition";
 import { animation } from "./utils/animation";
 import { blog } from "./utils/blog";
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	accordion();
 	breadcrumbs();
 	teamPersonMobile();
-    showMoreBtn();
+	showMoreBtn();
 	// pagination()
 });
 
@@ -79,3 +79,5 @@ $(window).on("load", function () {
 		$(".preloader").fadeOut(200);
 	}, 200);
 });
+
+

@@ -17,12 +17,16 @@
         <div class="c-blog-list">
             <div class="swiper-wrapper">
                 <?php
+                $current_post_id = get_the_ID();
                 $args = array(
                     'post_type' => 'post',
                     'posts_per_page' => 10,
                     'orderby' => 'date',
                     'order' => 'DESC'
                 );
+                if (is_single()) {
+                    $args['post__not_in'] = array($current_post_id);
+                }
                 $query = new WP_Query($args);
                 if ($query->have_posts()) :
                     while ($query->have_posts()) : $query->the_post(); ?>
@@ -32,7 +36,7 @@
                                     <?php if (has_post_thumbnail()) : ?>
                                         <?php the_post_thumbnail(); ?>
                                     <?php else : ?>
-                                        
+
                                         <img src="http://khm-kancelaria.local/wp-content/uploads/2024/01/ASSET_x5F_ZESPOL_xA0_Obraz-min.jpg" alt="">
                                     <?php endif; ?>
                                 </div>

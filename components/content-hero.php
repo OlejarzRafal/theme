@@ -2,7 +2,12 @@
     <div class="c-hero__container">
         <div class="c-hero__main">
             <div class="c-hero__left">
-                <?php theme_breadcrumbs('', '', '', true); ?>
+                
+                <?php
+                if (function_exists('yoast_breadcrumb')) {
+                    yoast_breadcrumb('<duv class="breadcrumbs">', '</duv>');
+                }
+                ?>
                 <div class="c-hero__content">
                     <h1><?php the_title(); ?></h1>
                     <p><?php the_field('hero__content'); ?></p>

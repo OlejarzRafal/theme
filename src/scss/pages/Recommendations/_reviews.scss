@@ -1,78 +1,88 @@
-[data-id='recommendations-reviews'] {
-  margin-bottom: 96px;
-  .recommendations-reviews {
-    &__title {
-      @include subtitle;
-      margin-bottom: 24px;
-    }
-    &__list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
-    }
-    &__column {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
-    &__item {
-      border-radius: 8px;
-      background: #fff;
-      box-shadow: 0px 10px 17px 3px rgba(233, 211, 206, 0.29);
-      padding: 48px;
-    }
-    &__logo {
-      margin-bottom: 24px;
-      img {
-        height: 48px;
-        width: auto;
-        max-width: 135px;
-        object-fit: contain;
-      }
-    }
-    &__description {
-      color: #484c58;
-      font-size: 18px;
-      font-weight: 500;
-      margin-bottom: 24px;
-    }
-    &__name {
-      color: #484c58;
-      font-size: 18px;
-      font-weight: 700;
-      margin: 0 0 2px;
-    }
-    &__company {
-      color: #757b8d;
-      font-size: 16px;
-      font-weight: 700;
-      margin: 0;
-    }
-  }
+[data-id="recommendations-reviews"] {
+	.google-reviews {
+		margin: 40px 0;
+		.ti-widget {
+			width: fit-content !important;
+			a {
+				padding: 0;
+			}
+		}
+	}
+	margin-bottom: 96px;
+	.recommendations-reviews {
+		&__title {
+			@include subtitle;
+			margin-bottom: 24px;
+		}
 
-  @media screen and (max-width: $xl) {
-    margin-bottom: 40px;
-    .recommendations-reviews {
-      &__title {
-        margin-bottom: 16px;
-      }
-      &__list,
-      &__column {
-        gap: 16px;
-      }
-      &__item {
-        padding: 20px;
-      }
-      &__description {
-        font-size: 16px;
-      }
-    }
-  }
-  @media screen and (max-width: $lg) {
-    .recommendations-reviews {
-      &__list {
-        grid-template-columns: 1fr;
-      }
-    }
-  }
+		&__list {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 40px;
+		}
+		&__column {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 40px;
+		}
+		&__item {
+			border-radius: 8px;
+			background: #fff;
+			box-shadow: 0px 10px 17px 3px rgba(233, 211, 206, 0.29);
+			padding: 48px;
+		}
+		&__logo {
+			margin-bottom: 24px;
+			img {
+				height: 48px;
+				width: auto;
+				max-width: 135px;
+				object-fit: contain;
+			}
+		}
+		&__description {
+			color: #484c58;
+			font-size: 18px;
+			font-weight: 500;
+			margin-bottom: 24px;
+		}
+		&__name {
+			color: #484c58;
+			font-size: 18px;
+			font-weight: 700;
+			margin: 0 0 2px;
+		}
+		&__company {
+			color: #757b8d;
+			font-size: 16px;
+			font-weight: 700;
+			margin: 0;
+		}
+	}
+
+	@media screen and (max-width: $xl) {
+		margin-bottom: 40px;
+		.recommendations-reviews {
+			&__title {
+				margin-bottom: 16px;
+			}
+			&__list,
+			&__column {
+				gap: 16px;
+			}
+			&__item {
+				padding: 20px;
+			}
+			&__description {
+				font-size: 16px;
+			}
+		}
+	}
+	@media screen and (max-width: $lg) {
+		.recommendations-reviews {
+			&__list {
+				grid-template-columns: 1fr;
+			}
+		}
+	}
 }

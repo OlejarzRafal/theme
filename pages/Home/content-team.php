@@ -40,6 +40,12 @@
                                         <span class="home-team__item__surname"><?php echo esc_html($surname); ?></span>
                                     <?php endif; ?>
                                 </div>
+                                <?php if ($position = get_sub_field('position')) : ?>
+                                    <div class="home-team__item__position">
+                                        <?php echo $position; ?>
+                                    </div>
+                                <?php endif; ?>
+
                             </a>
                         <?php endif; ?>
 
@@ -48,7 +54,7 @@
                     <?php endwhile; ?>
                 <?php endif; ?>
             </div>
-            
+
 
             <div class="home-team__scrollbar">
                 <div class="swiper-scrollbar"></div>

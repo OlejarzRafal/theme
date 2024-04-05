@@ -1,6 +1,7 @@
 [data-id="law"] {
 	@import "./text";
 	@import "./offerBox";
+	@import "./offerDesc";
 	.contents-brands {
 		margin: 104px 0;
 		@media (max-width: 991px) {

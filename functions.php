@@ -90,8 +90,10 @@ function add_excerpt_support_for_pages()
 // };
 
 // add_action('wp_head', 'handle_theme');
-add_action( 'init', 'wpse17478_init' );
+add_action('init', 'wpse17478_init');
 function wpse17478_init()
 {
-    remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
+    remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 }
+
+

@@ -1,5 +1,5 @@
 .ls-content {
-	margin: 64px 0 170px;
+	margin: 64px 0 100px;
 	&__container {
 		display: flex;
 		column-gap: 64px;
@@ -24,6 +24,27 @@
 				list-style: none;
 			}
 		}
+	}
+	&__cta {
+		display: inline-flex;
+		align-items: center;
+		padding: 12px 24px;
+		border-radius: 512px;
+		background: #1c203f;
+		color: #f4e7e7;
+		font-size: 16px;
+		font-weight: 600;
+		transition: opacity 0.3s ease-in-out;
+        width: 100%;
+        justify-content: center;
+        margin-top:40px;
+        svg{
+            transform: rotate(-90deg);
+            margin-left:8px;
+        }
+        &:hover{
+            opacity: 0.8;
+        }
 	}
 	&__mobile-hero {
 		display: none;
@@ -52,6 +73,7 @@
 			display: none;
 			&.open {
 				display: flex;
+                flex-direction: column;
 			}
 			#close-mobile-sidebar {
 				position: relative;
@@ -194,4 +216,5 @@
 			margin-top: 16px;
 		}
 	}
+
 }
