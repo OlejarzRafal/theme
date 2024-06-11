@@ -36,7 +36,7 @@
                                 </svg>
                                 <span class="news-item__data__date"><?php the_date('d.m.Y'); ?></span>
                             </div>
-                            <h3 class="news-item__title"><?php the_title(); ?></h3>
+                            <p class="news-item__title"><?php the_title(); ?></p>
                             <?php
                             if (has_excerpt()) {
                                 echo '<p class="news-item__text">' . get_the_excerpt() . '</p>';

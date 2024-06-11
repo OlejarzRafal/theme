@@ -41,7 +41,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <!-- styles and scripts in functions.php -->
 
-
+    <?php if (is_paged()) : ?>
+        <link rel="canonical" href="<?php echo esc_url(get_pagenum_link()); ?>" />
+    <?php endif; ?>
     <?php wp_head(); ?>
 </head>
 

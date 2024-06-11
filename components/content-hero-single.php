@@ -11,7 +11,7 @@
                 <div class="c-hero__content">
                     <?php
                     if (is_category()) : ?>
-                        <h2 class="h2">Kategoria: <?php echo single_cat_title(); ?></h2>
+                        <h1 class="h2"><?php echo single_cat_title(); ?></h1>
                     <?php else : ?>
                         <h1><?php the_title(); ?></h1>
                     <?php endif; ?>

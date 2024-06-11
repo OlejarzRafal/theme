@@ -57,7 +57,7 @@ $category_links = rtrim($category_links, ', ');
                 <?php if ($post_type != 'aktualnosci_cpt') : ?>
                     <div class="post__data__wrap">
                         <div class="post__data__category">
-                            kategoria: <?php echo $category_links; ?>
+                           <?php echo $category_links; ?>
                         </div>
                     </div>
                 <?php endif; ?>

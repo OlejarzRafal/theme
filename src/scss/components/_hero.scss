@@ -104,3 +104,19 @@
 		}
 	}
 }
+
+body.category {
+    [data-id="c-hero"] {
+        .c-hero {
+            &__left {
+                h1{
+                    color: #484c58;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 32px;
+                }
+            }
+        }
+    }
+}

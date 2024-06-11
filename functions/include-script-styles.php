@@ -1,7 +1,7 @@
 <?php
 function add_theme_assets()
 {
-    // wp_enqueue_style('style', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.4', 'all');
+    wp_enqueue_style('style', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.4', 'all');
 
 
     wp_deregister_script('jquery');
