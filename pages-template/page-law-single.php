@@ -8,6 +8,8 @@
     <?php
     get_template_part('components/content', 'hero-single');
     get_template_part('pages/LawSingle/content', 'content');
+    get_template_part('components/content', 'help');
+    get_template_part('components/content','custom-text');
     get_template_part('components/content', 'brands');
     get_template_part('components/content', 'blog');
     ?>

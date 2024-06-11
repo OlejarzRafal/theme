@@ -60,6 +60,12 @@
             </div>
 
         </div>
+        <div class="google-reviews">
+            <?php
+            $shortcode_output = do_shortcode('[trustindex no-registration=google]');
+            echo $shortcode_output;
+            ?>
+        </div>
     </div>
 
 

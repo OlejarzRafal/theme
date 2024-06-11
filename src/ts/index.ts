@@ -2,12 +2,12 @@
 import "../scss/style.scss";
 import { navigation } from "./utils/navigation";
 import { fixedHeader } from "./utils/navigation";
-// import { pagination } from './utils/pagination'
+import { pagination } from "./utils/pagination";
 import { transition } from "./utils/transition";
 import { animation } from "./utils/animation";
 import { blog } from "./utils/blog";
 import { newsPagination } from "./utils/news-pagination";
-import { blogPagination } from "./utils/news-pagination";
+// import { blogPagination } from "./utils/news-pagination";
 import Swiper, {
 	Navigation,
 	EffectFade,
@@ -31,6 +31,7 @@ import { homeLogotypeSlider } from "./utils/home-logotype";
 import { accordion } from "./utils/law-accordion";
 import { breadcrumbs } from "./utils/breadcrumbs";
 import { teamPersonMobile } from "./utils/team-person-mobile";
+import { showMoreBtn } from "./utils/show-more-btn";
 
 Swiper.use([
 	Navigation,
@@ -55,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	blog(Swiper);
 	homeLogos(Swiper);
 	newsPagination();
-	blogPagination();
+	// blogPagination();
 	homeLaws();
 	offerBox();
 	teamSlider(Swiper);
@@ -65,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	accordion();
 	breadcrumbs();
 	teamPersonMobile();
+	showMoreBtn();
 	// pagination()
 });
 
@@ -77,3 +79,5 @@ $(window).on("load", function () {
 		$(".preloader").fadeOut(200);
 	}, 200);
 });
+
+

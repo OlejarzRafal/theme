@@ -14,9 +14,13 @@
 	}
 	&:hover {
 		opacity: 0.7;
+		cursor: pointer;
 		svg {
 			transform: translateX(4px);
 		}
+	}
+	&__zero {
+		padding: 12px 0;
 	}
 }
 

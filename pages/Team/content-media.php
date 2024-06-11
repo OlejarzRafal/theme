@@ -4,7 +4,7 @@
             <div class="c-blog-top">
                 <div class="c-blog-top__left">
                     <?php if ($media_header = get_field('media_header')) : ?>
-                        <h2 class="c-blog-top__title"><?php echo esc_html($media_header); ?></h2>
+                        <p class="c-blog-top__title"><?php echo esc_html($media_header); ?></p>
                     <?php endif; ?>
                     <?php if ($media_text = get_field('media_text')) : ?>
                         <p class="c-blog-top__text"><?php echo esc_html($media_text); ?></p>
@@ -13,7 +13,7 @@
             </div>
             <div class="c-blog-list">
                 <div class="swiper-wrapper">
-                    <?php $x=1; ?>
+                    <?php $x = 1; ?>
                     <?php if (have_rows('boxy')) : ?>
                         <?php while (have_rows('boxy')) :
                             the_row(); ?>

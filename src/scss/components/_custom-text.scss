@@ -1,0 +1,9 @@
+.custom-text {
+	margin-top: 104px;
+	@media (max-width: 991px) {
+		margin-top: 74px;
+	}
+    @media (max-width: 767px) {
+		margin-top: 44px;
+	}
+}

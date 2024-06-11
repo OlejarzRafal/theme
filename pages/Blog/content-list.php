@@ -2,15 +2,24 @@
     <div class="news-list__container">
         <div class="news-list__main">
             <?php
+            // Ustalenie bieżącej strony
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+            $posts_per_page = ($paged == 1) ? 10 : 9;
+            // Parametry zapytania
             $args = array(
                 'post_type' => 'post',
-                'posts_per_page' => -1,
+                'posts_per_page' =>  $posts_per_page,
                 'orderby' => 'date',
-                'order' => 'DESC'
+                'order' => 'DESC',
+                'status' => 'public',
+                'paged' => $paged
             );
             $query = new WP_Query($args);
+
+            // Sprawdzenie czy są dostępne posty
             if ($query->have_posts()) :
-                while ($query->have_posts()) : $query->the_post(); ?>
+                while ($query->have_posts()) : $query->the_post();
+            ?>
                     <a href="<?php the_permalink(); ?>" class="news-list__item news-item">
                         <div class="news-item__image">
                             <?php if (has_post_thumbnail()) : ?>
@@ -27,14 +36,14 @@
                                 </svg>
                                 <span class="news-item__data__date"><?php the_date('d.m.Y'); ?></span>
                             </div>
-                            <h3 class="news-item__title"><?php the_title(); ?></h3>
+                            <p class="news-item__title"><?php the_title(); ?></p>
                             <?php
                             if (has_excerpt()) {
                                 echo '<p class="news-item__text">' . get_the_excerpt() . '</p>';
                             } else {
                                 $content = get_the_content();
                                 $content = strip_tags($content);
-                                $excerpt = substr($content, 0, 100);
+                                $excerpt = substr($content, 0, 115);
                                 echo '<p class="news-item__text">' . $excerpt . '...</p>';
                             }
                             ?>
@@ -46,11 +55,65 @@
                             </div>
                         </div>
                     </a>
-            <?php endwhile;
+            <?php
+                endwhile;
+                // Resetowanie zapytania po zakończeniu pętli
                 wp_reset_postdata();
-            endif; ?>
-
+            endif;
+            ?>
         </div>
-        <div class="news-list__pagination"></div>
+
+        <!-- Paginacja -->
+        <div class="news-list__pagination">
+            <ul class="pagination__list">
+                <li class="pagination__item">
+                    <?php if ($paged > 1) : ?>
+                        <a href="<?php echo previous_posts($query->max_num_pages, false); ?>" class="page-link prev active">
+                        <?php else : ?>
+                            <a class="page-link prev">
+                            <?php endif; ?>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M23.0256 12.975L3.73207 12.9746L11.9754 21.2178L10.5968 22.5963L7.7625e-05 11.9997L10.5968 1.40315L11.9754 2.78172L3.73202 11.025L23.0256 11.0255L23.0256 12.975Z" fill="#B5ADB7"></path>
+                            </svg>
+                            </a>
+                </li>
+                <?php
+                // Paginacja
+                $max_pages_to_show = 2; // Maksymalna liczba numerowanych stron przed kropkami
+                $current_page = max(1, $paged - floor($max_pages_to_show / 2));
+                $end_page = min($query->max_num_pages, $current_page + $max_pages_to_show - 1);
+
+                if ($current_page > 1) {
+                    echo '<li class="pagination__item"><a href="' . esc_url(get_pagenum_link(1)) . '" class="pagination__link">1</a></li>';
+                    if ($current_page > 2) {
+                        echo '<li class="pagination__item">...</li>';
+                    }
+                }
+
+                for ($i = $current_page; $i <= $end_page; $i++) {
+                    echo '<li class="pagination__item' . (($i == $paged) ? ' active' : '') . '"><a href="' . esc_url(get_pagenum_link($i)) . '" class="pagination__link">' . $i . '</a></li>';
+                }
+
+                if ($end_page < $query->max_num_pages) {
+                    echo '<li class="pagination__item">...</li>';
+                    echo '<li class="pagination__item"><a href="' . esc_url(get_pagenum_link($query->max_num_pages)) . '" class="pagination__link">' . $query->max_num_pages . '</a></li>';
+                }
+                ?>
+                <li class="pagination__item">
+                    <?php if ($paged < $query->max_num_pages) : ?>
+                        <a href="<?php echo next_posts($query->max_num_pages, false); ?>" class="page-link next active">
+                        <?php else : ?>
+                            <a class="page-link next">
+                            <?php endif; ?>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M0.974368 12.975L20.2679 12.9746L12.0246 21.2178L13.4032 22.5963L23.9999 11.9997L13.4032 1.40315L12.0246 2.78172L20.268 11.025L0.974368 11.0255Z" fill="#B5ADB7"></path>
+                            </svg>
+                            </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Koniec paginacji -->
+
+
     </div>
 </section>

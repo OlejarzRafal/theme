@@ -1,3 +1,12 @@
+<?Php 
+function custom_excerpt($text,$length){
+    if(mb_strlen($text) > $length){
+        $text = mb_substr($text,0,$length) . '...';
+    }
+    return $text;
+}
+?>
+
 <section data-id="news-list">
     <div class="news-list__container">
         <div class="news-list__main">
@@ -28,8 +37,8 @@
                         } else {
                             $content = get_the_content();
                             $content = strip_tags($content);
-                            $excerpt = substr($content, 0, 100);
-                            echo '<p class="news-item__text">' . $excerpt . '...</p>';
+                            $excerpt = custom_excerpt($content,115);
+                            echo '<p class="news-item__text">' . $excerpt . '</p>';
                         }
                         ?>
                         <div class="news-item__button">

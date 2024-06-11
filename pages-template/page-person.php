@@ -9,7 +9,11 @@
         <div class="team-person__container">
             <div class="team-person__left">
                 <div class="team-person__breadcrumbs">
-                    <?php theme_breadcrumbs('', '', '', true); ?>
+                    <?php
+                    if (function_exists('yoast_breadcrumb')) {
+                        yoast_breadcrumb('<duv class="breadcrumbs">', '</duv>');
+                    }
+                    ?>
                 </div>
                 <h1 class="team-person__title"><?php the_title(); ?></h1>
                 <div class="team-person__infoWrap">
@@ -28,7 +32,7 @@
                                     $link_title = $link['title'];
                                     $link_target = $link['target'] ? $link['target'] : '_self';
                                 ?>
-                                    <a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
+                                    <a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>" rel="nofollow noopener">
                                         <img src="<?php echo esc_url($person_single_social_icon['url']); ?>" alt="<?php echo esc_attr($person_single_social_icon['alt']); ?>" />
                                     </a>
                                 <?php endif; ?>
