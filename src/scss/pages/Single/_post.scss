@@ -110,6 +110,9 @@
 	}
 	&__content {
 		margin-top: 70px;
+        a,a:hover{
+            color: #d96761;
+        }
 		@media (max-width: 767px) {
 			margin-top: 40px;
 		}
