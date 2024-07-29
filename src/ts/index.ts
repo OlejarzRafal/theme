@@ -80,4 +80,10 @@ $(window).on("load", function () {
 	}, 200);
 });
 
-
+window.addEventListener("load", function () {
+	const images = document.querySelectorAll("img[data-src]");
+	images.forEach((img) => {
+		img.src = img.getAttribute("data-src");
+		img.removeAttribute("data-src");
+	});
+});

@@ -113,6 +113,14 @@
         </div>
     </div>
 </footer>
+
+<div class="bg-splash bg-splash--1"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-splash-1.png" alt="splash-1"></div>
+    <div class="bg-splash bg-splash--2"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-splash-2.png" alt="splash-2"></div>
+    <div class="bg-splash bg-splash--3"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-splash-3.png" alt="splash-3"></div>
+    <?php if (is_page(7) || is_page(61)) : ?>
+        <div class="bg-splash bg-splash--4"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-splash-4.png" alt="splash-4"></div>
+    <?php endif; ?>
+
 <?php wp_footer(); ?>
 
 </body>
